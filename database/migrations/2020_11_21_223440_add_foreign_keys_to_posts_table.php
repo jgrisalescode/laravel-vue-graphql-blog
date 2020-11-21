@@ -14,11 +14,11 @@ class AddForeignKeysToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //sqlite issue, needs that this columns will be nulable, whit MySql do not
-            $table->unsignedBigInteger('topic_id')->index()->nullable();
+            // Migrate to MySQL for the severals issues of sqlite
+            $table->unsignedBigInteger('topic_id')->index();
             $table->foreign('topic_id')->references('id')->on('topics');
 
-            $table->unsignedBigInteger('author_id')->index()->nullable();
+            $table->unsignedBigInteger('author_id')->index();
             $table->foreign('author_id')->references('id')->on('users');
         });
     }
