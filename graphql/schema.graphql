@@ -22,14 +22,14 @@ type User {
     email: String!
     created_at: DateTime!
     updated_at: DateTime!
-    posts: [Post!]!
+    posts: [Post!]! @hasMany # To prevent N+1 Query problems
 }
 
 type Topic {
     id: ID!
     name: String!
     slug: String!
-    posts: [Post!]!
+    posts: [Post!]! @hasMany # To prevent N+1 Query problems
 }
 
 type Post {
@@ -39,6 +39,6 @@ type Post {
     lead: String!
     created_at: DateTime!
     updated_at: DateTime!
-    author: User!
-    topic: Topic!
+    author: User! @belongsTo # To prevent N+1 Query problems
+    topic: Topic! @belongsTo # To prevent N+1 Query problems
 }
