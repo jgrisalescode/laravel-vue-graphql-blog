@@ -36,10 +36,10 @@ const apolloProvider = new VueApollo({
 const router = new VueRouter({
     mode: 'history',
     routes,
-    apolloProvider
 })
 
 const app = new Vue({
     el: '#app',
+    apolloProvider,
     router
 });
