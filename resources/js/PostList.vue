@@ -1,6 +1,11 @@
 <template>
     <div>
-
+        <div v-if="$apollo.loading">Loading...</div>
+        <div v-else>
+            <div v-for="post in posts" :key="post.id">
+                {{post.id}} is titled: {{post.title}}
+            </div>
+        </div>
     </div>
 </template>
 <script>
