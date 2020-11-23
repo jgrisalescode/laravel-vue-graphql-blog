@@ -20,6 +20,7 @@ type User {
     id: ID!
     name: String!
     email: String!
+    avatar: String
     created_at: DateTime!
     updated_at: DateTime!
     posts: [Post!]! @hasMany # To prevent N+1 Query problems
