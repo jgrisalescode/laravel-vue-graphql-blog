@@ -4,7 +4,7 @@
         <div v-else>
             <div class="text-lg text-gray-600">By {{post.author.name}} in <router-link :to="{name: 'topic', params:{slug: post.topic.slug}}" class="underline hover:text-black">
                             {{post.topic.name}}
-                        </router-link> * 3 hour ago</div>
+                        </router-link> * {{post.created_at | timeago}}</div>
             <h1 class="text-5xl mt-10 font-bold mb-12">{{post.title}}</h1>
             <p class="text-gray-700 pb-3 mb-12 whitespace-pre-line">{{post.content}}</p>
             <div class="mb-24 flex">
@@ -20,7 +20,7 @@
                     <div class="text-gray-600">Published in
                         <router-link :to="{name: 'topic', params:{slug: post.topic.slug}}" class="underline hover:text-black">
                             {{post.topic.name}}
-                        </router-link> on May 19, 2020</div>
+                        </router-link> on {{post.created_at | longdate}}</div>
                 </div>
             </div>
         </div>
@@ -36,6 +36,7 @@ export default {
                     id
                     title
                     content
+                    created_at
                     author {
                         id
                         name

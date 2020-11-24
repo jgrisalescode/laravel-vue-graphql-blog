@@ -11,7 +11,7 @@
             <router-link :to="{name: 'topic', params:{slug: post.topic.slug}}" class="underline hover:text-black">
                 {{post.topic.name}}
             </router-link>
-            * 3 hours ago
+            * {{post.created_ad | londate}}
         </div>
     </div>
 </template>

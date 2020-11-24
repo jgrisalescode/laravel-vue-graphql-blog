@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router'
 import ApolloClient from 'apollo-boost'
 import VueApollo from 'vue-apollo'
+import moment from 'moment'
 import './bootstrap';
 import PostList from './PostList'
 import Post from './Post'
@@ -49,6 +50,9 @@ const router = new VueRouter({
     mode: 'history',
     routes,
 })
+
+Vue.filter("timeago", date => moment(date).fromNow())
+Vue.filter("longdate", date => moment(date).format('MMMM Do YYYY'))
 
 const app = new Vue({
     el: '#app',
