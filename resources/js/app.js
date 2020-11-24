@@ -6,6 +6,7 @@ import './bootstrap';
 import PostList from './PostList'
 import Post from './Post'
 import TopicPostList from './TopicPostList'
+import AuthorPostList from './AuthorPostList'
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -25,6 +26,11 @@ const routes = [
         path: '/topics/:slug',
         name: 'topic',
         component: TopicPostList
+    },
+    {
+        path: '/authors/:id',
+        name: 'author',
+        component: AuthorPostList
     }
 ]
 

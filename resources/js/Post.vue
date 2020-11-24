@@ -12,7 +12,11 @@
                     <img v-bind:src="'/storage/faces/'+ post.author.avatar" alt="Author avatar" class="w-16 h-16 rounded-full">
                 </div>
                 <div class="flex flex-col justify-center">
-                    <div class="text-xl text-gray-600">Written by {{post.author.name}}</div>
+                    <div class="text-xl text-gray-600">Written by
+                        <router-link :to="{name: 'author', params:{id: post.author.id}}" class="underline hover:text-black">
+                            {{post.author.name}}
+                        </router-link>
+                    </div>
                     <div class="text-gray-600">Published in
                         <router-link :to="{name: 'topic', params:{slug: post.topic.slug}}" class="underline hover:text-black">
                             {{post.topic.name}}
