@@ -26,7 +26,7 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'avatar' => collect([
             'ahmad.jpg', 'akio.jpg', 'britney.jpg', 'daniel.jpg',
-            'harry.jpeg', 'john.png', 'jordan.jpg', 'juen.jpg',
+            'harry.jpeg', 'john.png', 'jordan.jpg', 'june.jpg',
             'rob.png', 'marcel.jpg', 'tim.jpg'
         ])->random()
     ];
