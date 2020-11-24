@@ -8,6 +8,7 @@ import PostList from './PostList'
 import Post from './Post'
 import TopicPostList from './TopicPostList'
 import AuthorPostList from './AuthorPostList'
+import NotFound from './Notfound'
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -36,9 +37,7 @@ const routes = [
     {
         path: '*',
         name: '404',
-        component: {
-            template: '<div>No Found</div>'
-        }
+        component: NotFound
     }
 ]
 
